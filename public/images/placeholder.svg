@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Green Diamond product placeholder">
+  <rect width="800" height="800" fill="#faf8f4"/>
+  <g fill="none" stroke="#c8a96a" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M400 250 L300 360 L400 560 L500 360 Z"/>
+    <path d="M300 360 L500 360"/>
+    <path d="M400 250 L360 360 M400 250 L440 360 M360 360 L400 560 M440 360 L400 560"/>
+  </g>
+  <text x="400" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#0b3d2e" letter-spacing="3">GREEN DIAMOND</text>
+</svg>
