@@ -33,9 +33,9 @@ export const mainNav: NavItem[] = [
       {
         heading: "By price",
         links: [
-          { label: "Under ₹50,000", href: "/diamonds?priceMax=5000000" },
-          { label: "₹50,000 – ₹1 lakh", href: "/diamonds?priceMin=5000000&priceMax=10000000" },
-          { label: "Above ₹1 lakh", href: "/diamonds?priceMin=10000000" },
+          { label: "Under ₹50,000", href: "/diamonds?priceMax=50000" },
+          { label: "₹50,000 – ₹1 lakh", href: "/diamonds?priceMin=50000&priceMax=100000" },
+          { label: "Above ₹1 lakh", href: "/diamonds?priceMin=100000" },
         ],
       },
       {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Product } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Price } from "./price";
+import { QuickView } from "./quick-view";
 import { Rating } from "./rating";
 import { WishlistButton } from "./wishlist-button";
 
@@ -31,6 +32,7 @@ export function ProductCard({ product }: { product: Product }) {
           </Badge>
         )}
         <WishlistButton productId={product.id} className="absolute right-3 top-3" />
+        <QuickView product={product} />
       </div>
 
       <div className="mt-4 flex flex-col gap-1.5">
