@@ -13,11 +13,11 @@
 > - The text below each `<!-- description -->` marker is yours — edit freely, it is preserved.
 > - Rebuild from scratch: `pnpm features:backfill` (overwrites manual description edits).
 
-<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat: add product detail page and related components" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
+<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): loose-diamond 4C finder (batch 3.4)" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
 ### Phase 0 foundation — design system, config, service/repository seams
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat: add product detail page and related components`
+- Last updated: 2026-07-02 — `feat(ui): loose-diamond 4C finder (batch 3.4)`
 - Files tracked: 39
 
 <!-- description -->
@@ -54,11 +54,11 @@ mocked behind typed seams. Build + lint clean.
 - next/image config to serve placeholder SVGs (real imagery in Phase 6)
 <!-- feature:end -->
 
-<!-- feature:begin id="shop-listing-faceted-filters-sort-quick-view-batch-3-2" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat: add product detail page and related components" removed="" createdBy="feat(ui): shop listing, faceted filters, sort & quick-view (batch 3.2)" files="frontend/app/shop/loading.tsx,frontend/app/shop/page.tsx,frontend/components/product/quick-view.tsx,frontend/components/shop/active-filters.tsx,frontend/components/shop/filter-sidebar.tsx,frontend/components/shop/mobile-filters.tsx,frontend/components/shop/pagination.tsx,frontend/components/shop/sort-select.tsx,frontend/components/shop/use-shop-params.ts,frontend/components/ui/breadcrumbs.tsx,frontend/components/ui/empty-state.tsx,frontend/components/ui/modal.tsx,backend/src/shop/facets.ts" -->
+<!-- feature:begin id="shop-listing-faceted-filters-sort-quick-view-batch-3-2" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): loose-diamond 4C finder (batch 3.4)" removed="" createdBy="feat(ui): shop listing, faceted filters, sort & quick-view (batch 3.2)" files="frontend/app/shop/loading.tsx,frontend/app/shop/page.tsx,frontend/components/product/quick-view.tsx,frontend/components/shop/active-filters.tsx,frontend/components/shop/filter-sidebar.tsx,frontend/components/shop/mobile-filters.tsx,frontend/components/shop/pagination.tsx,frontend/components/shop/sort-select.tsx,frontend/components/shop/use-shop-params.ts,frontend/components/ui/breadcrumbs.tsx,frontend/components/ui/empty-state.tsx,frontend/components/ui/modal.tsx,backend/src/shop/facets.ts" -->
 ### Shop listing, faceted filters, sort & quick-view (batch 3.2)
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat: add product detail page and related components`
+- Last updated: 2026-07-02 — `feat(ui): loose-diamond 4C finder (batch 3.4)`
 - Files tracked: 13
 
 <!-- description -->
@@ -119,4 +119,19 @@ _No description in the commit message._
 - Updated package.json to include structure update script.
 - Enhanced post-commit hook to regenerate STRUCTURE.md alongside FEATURES.md.
 - Created update-structure script to maintain repository structure documentation.
+<!-- feature:end -->
+
+<!-- feature:begin id="loose-diamond-4c-finder-batch-3-4" status="active" added="2026-07-02" updated="" updatedBy="" removed="" createdBy="feat(ui): loose-diamond 4C finder (batch 3.4)" files="frontend/app/diamonds/loading.tsx,frontend/app/diamonds/page.tsx,frontend/components/diamonds/diamond-results.tsx,frontend/components/diamonds/finder-filters.tsx,frontend/components/ui/range-slider.tsx" -->
+### Loose-diamond 4C finder (batch 3.4)
+
+- Added: 2026-07-02
+- Files tracked: 5
+
+<!-- description -->
+Dedicated /diamonds finder per SPEC §7.3: shape grid, dual-thumb carat and
+price sliders (URL-committed, debounced), cut/colour/clarity/cert/growth
+filters, spec table on desktop and tappable spec cards on mobile, active
+filter chips, sort, pagination and 4C explainers. Adds certLab to
+ProductQuery + cert URL param, finder slider bounds in facets, and a
+reusable accessible RangeSlider primitive.
 <!-- feature:end -->

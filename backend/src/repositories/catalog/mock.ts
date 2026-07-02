@@ -36,6 +36,7 @@ function matches(product: Product, q: ProductQuery): boolean {
   if (q.color && spec?.color !== q.color) return false;
   if (q.clarity && spec?.clarity !== q.clarity) return false;
   if (q.growthMethod && spec?.growthMethod !== q.growthMethod) return false;
+  if (q.certLab && spec?.certLab !== q.certLab) return false;
   if (q.caratMin !== undefined && (spec?.caratWeight ?? 0) < q.caratMin) return false;
   if (q.caratMax !== undefined && (spec?.caratWeight ?? Infinity) > q.caratMax) return false;
 

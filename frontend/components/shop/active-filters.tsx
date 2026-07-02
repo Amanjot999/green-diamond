@@ -38,6 +38,8 @@ function labelFor(key: string, value: string): string {
       return `From ${value}ct`;
     case "caratMax":
       return `Up to ${value}ct`;
+    case "cert":
+      return `Cert: ${value}`;
     case "q":
       return `“${value}”`;
     default:

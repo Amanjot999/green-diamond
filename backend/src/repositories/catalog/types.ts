@@ -1,6 +1,7 @@
 import type {
   Category,
   CategoryKind,
+  CertLab,
   DiamondShape,
   GrowthMethod,
   Metal,
@@ -31,6 +32,7 @@ export interface ProductQuery {
   clarity?: string;
   metal?: Metal;
   growthMethod?: GrowthMethod;
+  certLab?: CertLab;
   categorySlug?: string;
   featured?: boolean;
   search?: string;

@@ -14,17 +14,19 @@ backend/ (32) — domain & data — @green-diamond/backend
     shop/ (1) — catalog facet/query mapping
     types/ (4) — shared domain types
 docs/ (1) — guides (RUNBOOK)
-frontend/ (63) — Next.js app — @green-diamond/frontend
-  app/ (9) — routes (storefront + admin + api handlers)
+frontend/ (68) — Next.js app — @green-diamond/frontend
+  app/ (11) — routes (storefront + admin + api handlers)
+    diamonds/ (2)
     products/ (3)
     shop/ (2)
-  components/ (42) — presentational UI (ui/ = primitives)
+  components/ (45) — presentational UI (ui/ = primitives)
     brand/ (1)
+    diamonds/ (2)
     home/ (8)
     layout/ (6)
     product/ (13)
     shop/ (6)
-    ui/ (8)
+    ui/ (9)
   lib/ (1) — client-only helpers & hooks
     utils/ (1)
   public/ (6) — static assets

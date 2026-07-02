@@ -1,6 +1,6 @@
 import { rupeesToPaise } from "../config/money";
 import type { ProductQuery, ProductSort } from "../repositories";
-import type { DiamondShape, Metal, ProductType, GrowthMethod } from "../types";
+import type { CertLab, DiamondShape, Metal, ProductType, GrowthMethod } from "../types";
 
 export const TYPE_OPTIONS: { value: ProductType; label: string }[] = [
   { value: "ring", label: "Rings" },
@@ -34,6 +34,12 @@ export const GROWTH_OPTIONS: { value: GrowthMethod; label: string }[] = [
   { value: "CVD", label: "CVD" },
   { value: "HPHT", label: "HPHT" },
 ];
+
+export const CERT_OPTIONS: CertLab[] = ["IGI", "GIA", "GCAL"];
+
+/** Slider bounds for the loose-diamond finder (SPEC §7.3). */
+export const CARAT_RANGE = { min: 0.3, max: 3, step: 0.05 };
+export const PRICE_RANGE_RUPEES = { min: 20_000, max: 300_000, step: 5_000 };
 
 export const SORT_OPTIONS: { value: ProductSort; label: string }[] = [
   { value: "featured", label: "Featured" },
@@ -74,6 +80,7 @@ export function searchParamsToQuery(sp: RawSearchParams, pageSize = 12): Product
     clarity: str(sp.clarity),
     metal: str(sp.metal) as ProductQuery["metal"],
     growthMethod: str(sp.growth) as ProductQuery["growthMethod"],
+    certLab: str(sp.cert) as ProductQuery["certLab"],
     categorySlug,
     caratMin: num(sp.caratMin),
     caratMax: num(sp.caratMax),
@@ -95,6 +102,7 @@ export const FILTER_KEYS = [
   "clarity",
   "metal",
   "growth",
+  "cert",
   "occasion",
   "style",
   "collection",
