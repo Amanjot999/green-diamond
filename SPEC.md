@@ -103,20 +103,25 @@ Aim for **editorial, modern-luxury, lots of whitespace** — think Brilliant Ear
 Enforce clean layering so the deferred integrations and the mock→real DB swap are painless:
 
 ```
-/app                 → routes (storefront + admin + api route handlers)
-/components          → UI components (presentational)
-/features            → domain modules (cart, catalog, checkout, account, admin)
-/lib
-  /services          → INTERFACES + implementations (payment, shipping, email, search)
-  /repositories      → data access (mock now → Prisma later, same interface)
-  /db                → prisma client, schema, seed
-  /validation        → zod schemas
-  /utils
-/config              → env loading, feature flags, money/currency, tax rules
-/types               → shared types
-/styles              → tokens, globals
+/frontend            → Next.js app (UI) — pkg @green-diamond/frontend
+  /app               → routes (storefront + admin + api route handlers)
+  /components        → UI components (presentational)
+  /features          → domain modules (cart, catalog, checkout, account, admin)
+  /lib/utils         → UI-only helpers (cn)
+  /public            → static assets (tokens live in app/globals.css @theme)
+/backend             → domain + data — pkg @green-diamond/backend
+  /src/services      → INTERFACES + implementations (payment, shipping, email, search)
+  /src/repositories  → data access (mock now → Prisma later, same interface)
+  /src/db            → prisma client, schema, seed
+  /src/validation    → zod schemas
+  /src/shop          → catalog facet/query mapping
+  /src/config        → env loading, feature flags, money/currency, tax rules
+  /src/types         → shared types
 /tests               → unit + e2e
 ```
+
+pnpm workspace. Root scripts proxy → `frontend/`. Frontend imports backend via `@backend/*`
+(→ `backend/src/*`). Backend ⊥ import frontend. Dev port 3001.
 
 **Key principle:** UI and route handlers talk only to **service/repository interfaces**, never directly to a vendor SDK or to mock data. Back those interfaces with **mocks now**, real implementations later. Drive provider selection with **feature flags** (`PAYMENTS_PROVIDER`, `SHIPPING_PROVIDER`, `DATA_SOURCE`).
 
@@ -222,7 +227,7 @@ interface ShippingProvider {
 - **`ShiprocketShippingProvider` (skeleton + TODOs):** authenticate via API user (token), create order, generate AWB, fetch tracking, handle tracking webhook. Env: `SHIPROCKET_EMAIL`, `SHIPROCKET_PASSWORD` (or `SHIPROCKET_API_TOKEN`), `SHIPROCKET_CHANNEL_ID`, `SHIPROCKET_PICKUP_LOCATION`.
 - Note in README: Razorpay and Shiprocket are official partners; Razorpay Magic Checkout can also pull Shiprocket tracking — keep our abstraction compatible with either path.
 
-Mark **every** TODO with `// TODO(razorpay):` / `// TODO(shiprocket):` and centralise both in `/lib/services/`.
+Mark **every** TODO with `// TODO(razorpay):` / `// TODO(shiprocket):` and centralise both in `/backend/src/services/`.
 
 ---
 

@@ -52,7 +52,7 @@ Accounts you'll create **later, only when each phase needs them** (all have free
 ```bash
 pnpm create next-app@latest green-diamond --yes
 cd green-diamond
-pnpm dev          # open http://localhost:3000 to confirm it runs
+pnpm dev          # open http://localhost:3001 to confirm it runs (port pinned in frontend/package.json)
 ```
 
 **1.2 — Put it on GitHub.** Create an empty repo named `green-diamond` on GitHub (no README), then:
