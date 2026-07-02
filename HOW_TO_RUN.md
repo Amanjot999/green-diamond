@@ -13,6 +13,11 @@ The frontend imports backend code only through the `@backend/*` alias (which map
 (Shiprocket) are **mocked behind typed interfaces** and selected by env flags, so the app runs with
 zero external accounts.
 
+> **There is no separate backend server to start.** `backend/` is a library package that executes
+> *inside* the Next.js server — `pnpm dev` runs the entire stack (UI + backend services and
+> repositories) as one process on port 3001. The first separate process will be the PostgreSQL
+> database when Prisma lands in Phase 3.
+
 ## Prerequisites
 
 - **Node.js 20.9+**
