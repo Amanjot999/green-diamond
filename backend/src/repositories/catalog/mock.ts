@@ -1,5 +1,6 @@
-import type { Category, CategoryKind, Paginated, Product } from "../../types";
+import type { Category, CategoryKind, Paginated, Product, Review } from "../../types";
 import { mockCategories, mockProducts } from "../mock-data/catalog";
+import { mockReviews } from "../mock-data/reviews";
 import type { CatalogRepository, ProductQuery, ProductSort } from "./types";
 
 function paginate<T>(items: T[], page = 1, pageSize = 12): Paginated<T> {
@@ -95,5 +96,11 @@ export class MockCatalogRepository implements CatalogRepository {
 
   async searchLooseDiamonds(query: ProductQuery = {}): Promise<Paginated<Product>> {
     return this.listProducts({ ...query, type: "loose_diamond" });
+  }
+
+  async getProductReviews(productId: string): Promise<Review[]> {
+    return mockReviews
+      .filter((r) => r.productId === productId)
+      .sort((a, b) => b.date.localeCompare(a.date));
   }
 }

@@ -4,29 +4,16 @@ import { useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Eye } from "lucide-react";
-import type { Metal, Product, ProductType } from "@backend/types";
+import type { Metal, Product } from "@backend/types";
 import { cn } from "@/lib/utils/cn";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
-import { METAL_OPTIONS } from "@backend/shop/facets";
 import { Price } from "./price";
 import { Rating } from "./rating";
 import { ShapeIcon } from "./shape-icon";
+import { TYPE_LABEL, capitalize, metalLabel } from "./product-labels";
 import { WishlistButton } from "./wishlist-button";
-
-const TYPE_LABEL: Record<ProductType, string> = {
-  loose_diamond: "Loose diamond",
-  ring: "Ring",
-  earrings: "Earrings",
-  necklace: "Necklace",
-  pendant: "Pendant",
-  bracelet: "Bracelet",
-  bangle: "Bangle",
-};
-
-const metalLabel = (m: Metal) => METAL_OPTIONS.find((o) => o.value === m)?.label ?? m;
-const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 /**
  * Quick-view modal (SPEC §3, §7.2) — preview a product without leaving the
@@ -69,7 +56,9 @@ export function QuickView({ product, className }: { product: Product; className?
         aria-label={`Quick view: ${product.name}`}
         aria-haspopup="dialog"
         className={cn(
-          "absolute inset-x-3 bottom-3 inline-flex h-10 items-center justify-center gap-2 rounded-full bg-surface/95 text-sm font-medium text-charcoal shadow-sm backdrop-blur transition-all duration-300 ease-luxe",
+          // Hover-reveal is desktop-only: on touch layouts the invisible button
+          // would swallow taps meant for the product link underneath.
+          "absolute inset-x-3 bottom-3 hidden h-10 items-center justify-center gap-2 rounded-full bg-surface/95 text-sm font-medium text-charcoal shadow-sm backdrop-blur transition-all duration-300 ease-luxe lg:inline-flex",
           "translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100",
           className,
         )}

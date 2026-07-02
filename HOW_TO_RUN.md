@@ -122,6 +122,11 @@ Setup is automatic — `pnpm install` activates the hook (via the root `prepare`
 controls: `node scripts/setup-hooks.mjs` re-activates it; `pnpm features:backfill` rebuilds the
 whole file from git history (this overwrites manual description edits).
 
+The same hook also regenerates [`STRUCTURE.md`](./STRUCTURE.md) — a snapshot of the file tree,
+kept current on every commit. The **placement rules** themselves (where new files go, naming,
+frontend/backend import boundaries) live in [`AGENTS.md`](./AGENTS.md) under "File organization
+rules" and are enforced by `pnpm lint`, so they apply in every session, profile, or AI tool.
+
 ## More docs
 
 - [`SPEC.md`](./SPEC.md) — the project contract (architecture, phases, acceptance criteria)

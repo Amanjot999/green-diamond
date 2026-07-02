@@ -17,7 +17,8 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group relative flex flex-col">
       <div className="relative aspect-square overflow-hidden rounded-lg bg-sage-50">
-        <Link href={`/products/${product.slug}`} aria-label={product.name}>
+        {/* Positioned so the fill Image has a positioned direct parent (next/image requirement). */}
+        <Link href={`/products/${product.slug}`} aria-label={product.name} className="absolute inset-0">
           <Image
             src={media?.url ?? "/images/placeholder.svg"}
             alt={media?.alt ?? product.name}

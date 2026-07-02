@@ -7,6 +7,7 @@ import type {
   Paginated,
   Product,
   ProductType,
+  Review,
 } from "../../types";
 import type { Paise } from "../../config/money";
 
@@ -50,4 +51,6 @@ export interface CatalogRepository {
   getCategoryBySlug(slug: string): Promise<Category | null>;
   /** Dedicated 4C-driven loose-diamond search (SPEC §7.3). */
   searchLooseDiamonds(query?: ProductQuery): Promise<Paginated<Product>>;
+  /** Written reviews for a product, newest first (SPEC §7.4, §8). */
+  getProductReviews(productId: string): Promise<Review[]>;
 }

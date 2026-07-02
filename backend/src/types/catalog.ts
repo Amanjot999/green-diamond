@@ -101,3 +101,15 @@ export interface Product {
   reviewCount?: number;
   createdAt: string;
 }
+
+/** A customer product review (SPEC §6 Review, §7.4 PDP reviews). */
+export interface Review {
+  id: string;
+  productId: string;
+  author: string;
+  rating: number; // 1–5
+  title: string;
+  body: string;
+  date: string; // ISO
+  verifiedPurchase: boolean;
+}

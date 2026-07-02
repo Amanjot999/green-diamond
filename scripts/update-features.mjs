@@ -29,7 +29,7 @@ repoRoot = git("rev-parse", "--show-toplevel").trim();
 
 const FEATURES_PATH = join(repoRoot, "FEATURES.md");
 // Changes to these never count as feature activity (the log must not track itself).
-const IGNORED_FILES = new Set(["FEATURES.md", "pnpm-lock.yaml"]);
+const IGNORED_FILES = new Set(["FEATURES.md", "STRUCTURE.md", "pnpm-lock.yaml"]);
 const FEAT_RE = /^feat(\([^)]*\))?!?:\s*/;
 const DESC_MARK = "<!-- description -->";
 

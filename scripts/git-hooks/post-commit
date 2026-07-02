@@ -14,11 +14,12 @@ ROOT=$(git rev-parse --show-toplevel) || exit 0
 export FEATURES_UPDATING=1
 
 node "$ROOT/scripts/update-features.mjs" || exit 0
+node "$ROOT/scripts/update-structure.mjs" || true
 
-if [ -n "$(git -C "$ROOT" status --porcelain -- FEATURES.md)" ]; then
-  git -C "$ROOT" add FEATURES.md
+if [ -n "$(git -C "$ROOT" status --porcelain -- FEATURES.md STRUCTURE.md)" ]; then
+  git -C "$ROOT" add FEATURES.md STRUCTURE.md
   git -C "$ROOT" commit --amend --no-edit --no-verify --quiet
-  echo "post-commit: FEATURES.md updated and folded into this commit."
+  echo "post-commit: FEATURES.md/STRUCTURE.md updated and folded into this commit."
 fi
 
 exit 0
