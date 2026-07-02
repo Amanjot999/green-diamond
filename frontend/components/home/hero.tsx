@@ -38,8 +38,8 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md">
           <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sage-100 shadow-elevated">
             <Image
-              src="/images/placeholder.svg"
-              alt="A certified lab-grown diamond"
+              src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=1600&auto=format&fit=crop"
+              alt="Fine gold and diamond jewellery worn in soft daylight"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 40vw"

@@ -1,7 +1,12 @@
 import { rupeesToPaise } from "../../config/money";
 import type { Category, Product } from "../../types";
 
-const IMG = "/images/placeholder.svg";
+// Free-license demo imagery hotlinked from stock CDNs (Unsplash & Pexels).
+// TODO(phase-6): replace with owned product photography via Cloudinary.
+const u = (id: string, w = 1200) =>
+  `https://images.unsplash.com/photo-${id}?q=80&w=${w}&auto=format&fit=crop`;
+const px = (id: number, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 /** A small but realistic demo catalogue for Phase 0/1 (mock-backed). */
 
@@ -48,7 +53,10 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: true,
     categorySlugs: ["round", "bestsellers"],
-    media: [{ id: "m1", url: IMG, alt: "1.02ct round brilliant lab diamond", type: "image", position: 0 }],
+    media: [
+      { id: "m1", url: px(5442447), alt: "Loose lab-grown diamonds on dark velvet — round brilliant beside cushion and heart cuts", type: "image", position: 0 },
+      { id: "m1b", url: px(691046), alt: "Round brilliant diamond macro, prong-set", type: "image", position: 1 },
+    ],
     variants: [
       { id: "v-rd-102", productId: "p-rd-102", price: rupeesToPaise(78000), sku: "GD-LD-RD-102", stock: 1, lowStockThreshold: 1 },
     ],
@@ -74,7 +82,10 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: true,
     categorySlugs: ["oval", "signature"],
-    media: [{ id: "m2", url: IMG, alt: "1.51ct oval lab diamond", type: "image", position: 0 }],
+    media: [
+      { id: "m2", url: px(5442447, 1400), alt: "Loose lab-grown diamonds on dark velvet", type: "image", position: 0 },
+      { id: "m2b", url: u("1512163143273-bde0e3cc7407"), alt: "Diamond ring presented in a gift box", type: "image", position: 1 },
+    ],
     variants: [
       { id: "v-ov-151", productId: "p-ov-151", price: rupeesToPaise(124000), sku: "GD-LD-OV-151", stock: 1, lowStockThreshold: 1 },
     ],
@@ -100,7 +111,9 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: false,
     categorySlugs: ["cushion", "signature"],
-    media: [{ id: "m3", url: IMG, alt: "2.01ct cushion lab diamond", type: "image", position: 0 }],
+    media: [
+      { id: "m3", url: px(5442447, 1600), alt: "Cushion-cut lab diamond among loose stones on dark velvet", type: "image", position: 0 },
+    ],
     variants: [
       { id: "v-cu-201", productId: "p-cu-201", price: rupeesToPaise(198000), sku: "GD-LD-CU-201", stock: 1, lowStockThreshold: 1 },
     ],
@@ -126,7 +139,9 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: false,
     categorySlugs: ["emerald-cut", "new-arrivals"],
-    media: [{ id: "m4", url: IMG, alt: "0.71ct emerald-cut lab diamond", type: "image", position: 0 }],
+    media: [
+      { id: "m4", url: px(998521), alt: "Ice-white lab diamond facets, macro", type: "image", position: 0 },
+    ],
     variants: [
       { id: "v-em-071", productId: "p-em-071", price: rupeesToPaise(46000), sku: "GD-LD-EM-071", stock: 1, lowStockThreshold: 1 },
     ],
@@ -153,7 +168,11 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: true,
     categorySlugs: ["solitaire", "engagement", "bestsellers"],
-    media: [{ id: "m5", url: IMG, alt: "Aurora solitaire engagement ring", type: "image", position: 0 }],
+    media: [
+      { id: "m5", url: u("1605100804763-247f67b3557e"), alt: "Diamond engagement ring, macro on black", type: "image", position: 0 },
+      { id: "m5b", url: u("1589674781759-c21c37956a44"), alt: "Pavé white-gold diamond ring on white", type: "image", position: 1 },
+      { id: "m5c", url: px(10475789), alt: "Rose-gold halo diamond ring, standing", type: "image", position: 2 },
+    ],
     variants: [
       { id: "v-ring-18kw-12", productId: "p-ring-sol", metal: "18k", metalColor: "white", ringSize: "12", centerCarat: 1, price: rupeesToPaise(89000), sku: "GD-RING-SOL-18KW-12", stock: 5, lowStockThreshold: 2 },
       { id: "v-ring-18ky-12", productId: "p-ring-sol", metal: "18k", metalColor: "yellow", ringSize: "12", centerCarat: 1, price: rupeesToPaise(89000), sku: "GD-RING-SOL-18KY-12", stock: 4, lowStockThreshold: 2 },
@@ -181,7 +200,10 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: true,
     categorySlugs: ["halo", "studs", "gifting", "everyday", "bestsellers"],
-    media: [{ id: "m6", url: IMG, alt: "Celeste halo stud earrings", type: "image", position: 0 }],
+    media: [
+      { id: "m6", url: u("1617038220319-276d3cfab638"), alt: "Gold earrings resting on natural stone", type: "image", position: 0 },
+      { id: "m6b", url: u("1603974372039-adc49044b6bd"), alt: "Gold earrings on a vintage mirror", type: "image", position: 1 },
+    ],
     variants: [
       { id: "v-studs-18kw", productId: "p-studs-halo", metal: "18k", metalColor: "white", price: rupeesToPaise(54000), sku: "GD-EAR-HALO-18KW", stock: 8, lowStockThreshold: 3 },
       { id: "v-studs-18ky", productId: "p-studs-halo", metal: "18k", metalColor: "yellow", price: rupeesToPaise(54000), sku: "GD-EAR-HALO-18KY", stock: 7, lowStockThreshold: 3 },
@@ -201,7 +223,11 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: false,
     categorySlugs: ["tennis", "gifting", "signature"],
-    media: [{ id: "m7", url: IMG, alt: "Lumen tennis bracelet", type: "image", position: 0 }],
+    media: [
+      { id: "m7", url: u("1573408301185-9146fe634ad0"), alt: "Diamond line bracelet sparkling on black", type: "image", position: 0 },
+      { id: "m7b", url: u("1611591437281-460bfbe1220a"), alt: "Gold and diamond bracelet detail", type: "image", position: 1 },
+      { id: "m7c", url: u("1522312346375-d1a52e2b99b3"), alt: "Bracelet and rings worn together", type: "image", position: 2 },
+    ],
     variants: [
       { id: "v-brc-18kw", productId: "p-bracelet-tennis", metal: "18k", metalColor: "white", price: rupeesToPaise(145000), sku: "GD-BRC-TENNIS-18KW", stock: 3, lowStockThreshold: 2 },
     ],
@@ -221,7 +247,11 @@ export const mockProducts: Product[] = [
     status: "active",
     featured: false,
     categorySlugs: ["solitaire", "everyday", "gifting", "new-arrivals"],
-    media: [{ id: "m8", url: IMG, alt: "Solène solitaire pendant", type: "image", position: 0 }],
+    media: [
+      { id: "m8", url: u("1635767798638-3e25273a8236"), alt: "Layered gold necklaces with a round pendant", type: "image", position: 0 },
+      { id: "m8b", url: u("1611652022419-a9419f74343d"), alt: "Delicate pendant necklace worn", type: "image", position: 1 },
+      { id: "m8c", url: u("1610694955371-d4a3e0ce4b52"), alt: "Layered coin pendant necklaces", type: "image", position: 2 },
+    ],
     variants: [
       { id: "v-pen-14kw", productId: "p-pendant-solitaire", metal: "14k", metalColor: "white", price: rupeesToPaise(38000), sku: "GD-PEN-SOL-14KW", stock: 10, lowStockThreshold: 3 },
       { id: "v-pen-14ky", productId: "p-pendant-solitaire", metal: "14k", metalColor: "yellow", price: rupeesToPaise(38000), sku: "GD-PEN-SOL-14KY", stock: 9, lowStockThreshold: 3 },

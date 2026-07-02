@@ -13,11 +13,11 @@
 > - The text below each `<!-- description -->` marker is yours — edit freely, it is preserved.
 > - Rebuild from scratch: `pnpm features:backfill` (overwrites manual description edits).
 
-<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): loose-diamond 4C finder (batch 3.4)" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
+<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
 ### Phase 0 foundation — design system, config, service/repository seams
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat(ui): loose-diamond 4C finder (batch 3.4)`
+- Last updated: 2026-07-02 — `feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)`
 - Files tracked: 39
 
 <!-- description -->
@@ -37,11 +37,11 @@ UI talks only to service/repository interfaces. Razorpay & Shiprocket stay
 mocked behind typed seams. Build + lint clean.
 <!-- feature:end -->
 
-<!-- feature:begin id="home-page-product-card-mega-menu-navigation-batch-3-1" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat: add product detail page and related components" removed="" createdBy="feat(ui): home page, product card & mega-menu navigation (batch 3.1)" files="frontend/components/home/bestsellers.tsx,frontend/components/home/cert-logos.tsx,frontend/components/home/dual-teaser.tsx,frontend/components/home/featured-collections.tsx,frontend/components/home/hero.tsx,frontend/components/home/newsletter-cta.tsx,frontend/components/home/shop-by-shape.tsx,frontend/components/home/testimonials.tsx,frontend/components/layout/desktop-nav.tsx,frontend/components/layout/mobile-menu.tsx,frontend/components/layout/nav-data.ts,frontend/components/product/price.tsx,frontend/components/product/product-card.tsx,frontend/components/product/rating.tsx,frontend/components/product/shape-icon.tsx,frontend/components/product/wishlist-button.tsx,frontend/components/ui/section.tsx" -->
+<!-- feature:begin id="home-page-product-card-mega-menu-navigation-batch-3-1" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)" removed="" createdBy="feat(ui): home page, product card & mega-menu navigation (batch 3.1)" files="frontend/components/home/bestsellers.tsx,frontend/components/home/cert-logos.tsx,frontend/components/home/dual-teaser.tsx,frontend/components/home/featured-collections.tsx,frontend/components/home/hero.tsx,frontend/components/home/newsletter-cta.tsx,frontend/components/home/shop-by-shape.tsx,frontend/components/home/testimonials.tsx,frontend/components/layout/desktop-nav.tsx,frontend/components/layout/mobile-menu.tsx,frontend/components/layout/nav-data.ts,frontend/components/product/price.tsx,frontend/components/product/product-card.tsx,frontend/components/product/rating.tsx,frontend/components/product/shape-icon.tsx,frontend/components/product/wishlist-button.tsx,frontend/components/ui/section.tsx" -->
 ### Home page, product card & mega-menu navigation (batch 3.1)
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat: add product detail page and related components`
+- Last updated: 2026-07-02 — `feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)`
 - Files tracked: 17
 
 <!-- description -->
@@ -134,4 +134,19 @@ filters, spec table on desktop and tappable spec cards on mobile, active
 filter chips, sort, pagination and 4C explainers. Adds certLab to
 ProductQuery + cert URL param, finder slider bounds in facets, and a
 reusable accessible RangeSlider primitive.
+<!-- feature:end -->
+
+<!-- feature:begin id="real-demo-imagery-via-free-license-stock-cdns-unsplash-pexel" status="active" added="2026-07-02" updated="" updatedBy="" removed="" createdBy="feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)" files="backend/src/repositories/mock-data/catalog.ts,frontend/components/home/hero.tsx,frontend/next.config.ts" -->
+### Real demo imagery via free-license stock CDNs (Unsplash/Pexels)
+
+- Added: 2026-07-02
+- Files tracked: 3
+
+<!-- description -->
+Replaces the placeholder SVG with verified hotlinked stock photography:
+multi-image product galleries (rings, bracelet, pendant, loose stones),
+lifestyle hero, and next/image remotePatterns for images.unsplash.com and
+images.pexels.com. Every URL curl-verified (HTTP 200) and visually reviewed
+on a contact sheet before assignment. TODO(phase-6): swap for owned product
+photography via Cloudinary.
 <!-- feature:end -->
