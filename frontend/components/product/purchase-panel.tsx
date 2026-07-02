@@ -6,6 +6,7 @@ import type { Metal, Product, ProductVariant } from "@backend/types";
 import { cn } from "@/lib/utils/cn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/features/cart/cart-store";
 import { Price } from "./price";
 import { Rating } from "./rating";
 import { TYPE_LABEL, capitalize, metalLabel } from "./product-labels";
@@ -39,6 +40,7 @@ function axisValues(variants: ProductVariant[], key: AxisKey): (string | number)
  * All tap targets ≥ 44px on touch layouts.
  */
 export function PurchasePanel({ product }: { product: Product }) {
+  const addLine = useCart((s) => s.add);
   const [variantId, setVariantId] = useState(
     () => (product.variants.find((v) => v.stock > 0) ?? product.variants[0])?.id,
   );
@@ -84,7 +86,25 @@ export function PurchasePanel({ product }: { product: Product }) {
 
   function addToBag() {
     if (outOfStock) return;
-    // TODO(batch-3.5): persist via CartRepository.addItem (server action) + open the cart drawer.
+    const variantLabel = [
+      variant.metal !== undefined ? metalLabel(variant.metal) : undefined,
+      variant.metalColor !== undefined ? capitalize(variant.metalColor) : undefined,
+      variant.ringSize !== undefined ? `Size ${variant.ringSize}` : undefined,
+      variant.centerCarat !== undefined ? `${variant.centerCarat.toFixed(2)} ct` : undefined,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+    addLine({
+      variantId: variant.id,
+      productId: product.id,
+      slug: product.slug,
+      name: product.name,
+      image: product.media[0]?.url,
+      variantLabel: variantLabel || undefined,
+      unitPrice: variant.price,
+      qty,
+      maxQty,
+    });
     setAdded(true);
     if (addedTimer.current) clearTimeout(addedTimer.current);
     addedTimer.current = setTimeout(() => setAdded(false), 2200);

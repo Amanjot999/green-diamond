@@ -13,11 +13,11 @@
 > - The text below each `<!-- description -->` marker is yours — edit freely, it is preserved.
 > - Rebuild from scratch: `pnpm features:backfill` (overwrites manual description edits).
 
-<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
+<!-- feature:begin id="phase-0-foundation-design-system-config-service-repository-s" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)" removed="" createdBy="feat: phase 0 foundation — design system, config, service/repository seams" files="frontend/.env.example,frontend/components/brand/logo.tsx,frontend/components/layout/announcement-bar.tsx,frontend/components/layout/footer.tsx,frontend/components/layout/header.tsx,frontend/components/ui/badge.tsx,frontend/components/ui/button.tsx,frontend/components/ui/container.tsx,frontend/components/ui/index.ts,backend/src/config/env.ts,backend/src/config/flags.ts,backend/src/config/money.ts,backend/src/config/tax.ts,backend/src/repositories/cart/index.ts,backend/src/repositories/cart/mock.ts,backend/src/repositories/cart/types.ts,backend/src/repositories/catalog/index.ts,backend/src/repositories/catalog/mock.ts,backend/src/repositories/catalog/types.ts,backend/src/repositories/index.ts,backend/src/repositories/mock-data/catalog.ts,backend/src/services/email/index.ts,backend/src/services/email/mock.ts,backend/src/services/email/types.ts,backend/src/services/index.ts,backend/src/services/payment/index.ts,backend/src/services/payment/mock.ts,backend/src/services/payment/razorpay.ts,backend/src/services/payment/types.ts,backend/src/services/shipping/index.ts,backend/src/services/shipping/mock.ts,backend/src/services/shipping/shiprocket.ts,backend/src/services/shipping/types.ts,frontend/lib/utils/cn.ts,frontend/public/images/placeholder.svg,backend/src/types/cart.ts,backend/src/types/catalog.ts,backend/src/types/common.ts,backend/src/types/index.ts" -->
 ### Phase 0 foundation — design system, config, service/repository seams
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat(content): real demo imagery via free-license stock CDNs (Unsplash/Pexels)`
+- Last updated: 2026-07-02 — `feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)`
 - Files tracked: 39
 
 <!-- description -->
@@ -54,11 +54,11 @@ mocked behind typed seams. Build + lint clean.
 - next/image config to serve placeholder SVGs (real imagery in Phase 6)
 <!-- feature:end -->
 
-<!-- feature:begin id="shop-listing-faceted-filters-sort-quick-view-batch-3-2" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): loose-diamond 4C finder (batch 3.4)" removed="" createdBy="feat(ui): shop listing, faceted filters, sort & quick-view (batch 3.2)" files="frontend/app/shop/loading.tsx,frontend/app/shop/page.tsx,frontend/components/product/quick-view.tsx,frontend/components/shop/active-filters.tsx,frontend/components/shop/filter-sidebar.tsx,frontend/components/shop/mobile-filters.tsx,frontend/components/shop/pagination.tsx,frontend/components/shop/sort-select.tsx,frontend/components/shop/use-shop-params.ts,frontend/components/ui/breadcrumbs.tsx,frontend/components/ui/empty-state.tsx,frontend/components/ui/modal.tsx,backend/src/shop/facets.ts" -->
+<!-- feature:begin id="shop-listing-faceted-filters-sort-quick-view-batch-3-2" status="active" added="2026-06-25" updated="2026-07-02" updatedBy="feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)" removed="" createdBy="feat(ui): shop listing, faceted filters, sort & quick-view (batch 3.2)" files="frontend/app/shop/loading.tsx,frontend/app/shop/page.tsx,frontend/components/product/quick-view.tsx,frontend/components/shop/active-filters.tsx,frontend/components/shop/filter-sidebar.tsx,frontend/components/shop/mobile-filters.tsx,frontend/components/shop/pagination.tsx,frontend/components/shop/sort-select.tsx,frontend/components/shop/use-shop-params.ts,frontend/components/ui/breadcrumbs.tsx,frontend/components/ui/empty-state.tsx,frontend/components/ui/modal.tsx,backend/src/shop/facets.ts" -->
 ### Shop listing, faceted filters, sort & quick-view (batch 3.2)
 
 - Added: 2026-06-25
-- Last updated: 2026-07-02 — `feat(ui): loose-diamond 4C finder (batch 3.4)`
+- Last updated: 2026-07-02 — `feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)`
 - Files tracked: 13
 
 <!-- description -->
@@ -70,11 +70,11 @@ primitive plus the product-card quick-view, and breadcrumbs/empty-state
 UI primitives.
 <!-- feature:end -->
 
-<!-- feature:begin id="add-mobile-filters-component-for-responsive-filtering-option" status="active" added="2026-07-02" updated="2026-07-02" updatedBy="feat: add product detail page and related components" removed="" createdBy="feat: add mobile filters component for responsive filtering options" files="HOW_TO_RUN.md,backend/package.json,backend/tsconfig.json,frontend/package.json" -->
+<!-- feature:begin id="add-mobile-filters-component-for-responsive-filtering-option" status="active" added="2026-07-02" updated="2026-07-02" updatedBy="feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)" removed="" createdBy="feat: add mobile filters component for responsive filtering options" files="HOW_TO_RUN.md,backend/package.json,backend/tsconfig.json,frontend/package.json" -->
 ### Frontend/backend workspace split & run guide
 
 - Added: 2026-07-02
-- Last updated: 2026-07-02 — `feat: add product detail page and related components`
+- Last updated: 2026-07-02 — `feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)`
 - Files tracked: 4
 
 <!-- description -->
@@ -99,10 +99,11 @@ shipped in batch 3.2._
 _No description in the commit message._
 <!-- feature:end -->
 
-<!-- feature:begin id="add-product-detail-page-and-related-components" status="active" added="2026-07-02" updated="" updatedBy="" removed="" createdBy="feat: add product detail page and related components" files="backend/src/repositories/mock-data/reviews.ts,frontend/app/products/[slug]/loading.tsx,frontend/app/products/[slug]/not-found.tsx,frontend/app/products/[slug]/page.tsx,frontend/components/product/four-cs.tsx,frontend/components/product/gallery.tsx,frontend/components/product/product-labels.ts,frontend/components/product/purchase-panel.tsx,frontend/components/product/reviews.tsx,frontend/components/product/spec-table.tsx,frontend/components/product/trust-blurbs.tsx,scripts/update-structure.mjs" -->
+<!-- feature:begin id="add-product-detail-page-and-related-components" status="active" added="2026-07-02" updated="2026-07-02" updatedBy="feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)" removed="" createdBy="feat: add product detail page and related components" files="backend/src/repositories/mock-data/reviews.ts,frontend/app/products/[slug]/loading.tsx,frontend/app/products/[slug]/not-found.tsx,frontend/app/products/[slug]/page.tsx,frontend/components/product/four-cs.tsx,frontend/components/product/gallery.tsx,frontend/components/product/product-labels.ts,frontend/components/product/purchase-panel.tsx,frontend/components/product/reviews.tsx,frontend/components/product/spec-table.tsx,frontend/components/product/trust-blurbs.tsx,scripts/update-structure.mjs" -->
 ### Add product detail page and related components
 
 - Added: 2026-07-02
+- Last updated: 2026-07-02 — `feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)`
 - Files tracked: 12
 
 <!-- description -->
@@ -149,4 +150,23 @@ lifestyle hero, and next/image remotePatterns for images.unsplash.com and
 images.pexels.com. Every URL curl-verified (HTTP 200) and visually reviewed
 on a contact sheet before assignment. TODO(phase-6): swap for owned product
 photography via Cloudinary.
+<!-- feature:end -->
+
+<!-- feature:begin id="cart-drawer-bag-page-multi-step-checkout-batch-3-5" status="active" added="2026-07-02" updated="" updatedBy="" removed="" createdBy="feat(ui): cart drawer + bag page + multi-step checkout (batch 3.5)" files="backend/src/validation/checkout.ts,backend/src/validation/index.ts,frontend/app/cart/page.tsx,frontend/app/checkout/actions.ts,frontend/app/checkout/confirmation/page.tsx,frontend/app/checkout/page.tsx,frontend/components/ui/input.tsx,frontend/features/cart/cart-drawer.tsx,frontend/features/cart/cart-line-item.tsx,frontend/features/cart/cart-page-client.tsx,frontend/features/cart/cart-store.ts,frontend/features/cart/cart-trigger.tsx,frontend/features/checkout/address-form.tsx,frontend/features/checkout/checkout-flow.tsx,frontend/features/checkout/confirmation-client.tsx,frontend/features/checkout/order-snapshot.ts,frontend/lib/use-mounted.ts" -->
+### Cart drawer + bag page + multi-step checkout (batch 3.5)
+
+- Added: 2026-07-02
+- Files tracked: 17
+
+<!-- description -->
+Client cart on Zustand (persisted, hydration-safe via useSyncExternalStore
+gate): slide-over drawer with header badge, full bag page with mock coupon
+(WELCOME10) using paise-safe discount math, and a four-step checkout —
+Zod-validated address (shared schema in backend/src/validation), pincode
+serviceability + insured rates from the mock ShippingProvider (free over the
+configured threshold), review, and mock PaymentProvider payment ending in a
+confirmation page with inclusive-GST breakdown from the configurable tax
+rule. Adds Input primitive, Modal side='right' drawer variant, and wires the
+PDP add-to-bag. Verified end-to-end in-browser at 390px: add -> drawer ->
+address -> rates -> pay -> confirmation, bag emptied after order.
 <!-- feature:end -->

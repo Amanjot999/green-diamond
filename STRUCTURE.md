@@ -6,28 +6,34 @@
 > of the tree as of the latest commit.
 
 ```
-backend/ (32) — domain & data — @green-diamond/backend
-  src/ (30) — backend source (relative imports only)
+backend/ (34) — domain & data — @green-diamond/backend
+  src/ (32) — backend source (relative imports only)
     config/ (4) — env, flags, money, tax
     repositories/ (9) — data access (mock now → Prisma in Phase 3)
     services/ (12) — service interfaces + providers (mocks live, vendors deferred)
     shop/ (1) — catalog facet/query mapping
     types/ (4) — shared domain types
+    validation/ (2) — zod schemas
 docs/ (1) — guides (RUNBOOK)
-frontend/ (68) — Next.js app — @green-diamond/frontend
-  app/ (11) — routes (storefront + admin + api handlers)
+frontend/ (83) — Next.js app — @green-diamond/frontend
+  app/ (15) — routes (storefront + admin + api handlers)
+    cart/ (1)
+    checkout/ (3)
     diamonds/ (2)
     products/ (3)
     shop/ (2)
-  components/ (45) — presentational UI (ui/ = primitives)
+  components/ (46) — presentational UI (ui/ = primitives)
     brand/ (1)
     diamonds/ (2)
     home/ (8)
     layout/ (6)
     product/ (13)
     shop/ (6)
-    ui/ (9)
-  lib/ (1) — client-only helpers & hooks
+    ui/ (10)
+  features/ (9) — domain modules (cart, checkout, …)
+    cart/ (5)
+    checkout/ (4)
+  lib/ (2) — client-only helpers & hooks
     utils/ (1)
   public/ (6) — static assets
     images/ (1)

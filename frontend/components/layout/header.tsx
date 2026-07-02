@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Heart, Search, ShoppingBag, User } from "lucide-react";
+import { Heart, Search, User } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/ui/container";
+import { CartTrigger } from "@/features/cart/cart-trigger";
 import { DesktopNav } from "./desktop-nav";
 import { MobileMenu } from "./mobile-menu";
 
@@ -9,7 +10,6 @@ const icons = [
   { label: "Search", href: "/search", Icon: Search, always: true },
   { label: "Account", href: "/account", Icon: User, always: false },
   { label: "Wishlist", href: "/wishlist", Icon: Heart, always: false },
-  { label: "Cart", href: "/cart", Icon: ShoppingBag, always: true },
 ];
 
 export function Header() {
@@ -34,6 +34,7 @@ export function Header() {
               <Icon className="h-5 w-5" strokeWidth={1.5} />
             </Link>
           ))}
+          <CartTrigger />
         </div>
       </Container>
     </header>

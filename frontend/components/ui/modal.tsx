@@ -16,6 +16,8 @@ export interface ModalProps {
   labelledBy?: string;
   /** Accessible name used when there is no visible title to reference. */
   label?: string;
+  /** "center" = dialog (bottom sheet on mobile); "right" = slide-over drawer. */
+  side?: "center" | "right";
   className?: string;
 }
 
@@ -25,7 +27,15 @@ export interface ModalProps {
  * trigger on close. Animations are gated by the global prefers-reduced-motion
  * rule in globals.css.
  */
-export function Modal({ open, onClose, children, labelledBy, label, className }: ModalProps) {
+export function Modal({
+  open,
+  onClose,
+  children,
+  labelledBy,
+  label,
+  side = "center",
+  className,
+}: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
 
@@ -82,7 +92,10 @@ export function Modal({ open, onClose, children, labelledBy, label, className }:
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center sm:items-center"
+      className={cn(
+        "fixed inset-0 z-50 flex",
+        side === "right" ? "justify-end" : "items-end justify-center sm:items-center",
+      )}
       onClick={onClose}
       onKeyDown={handleKeyDown}
     >
@@ -96,7 +109,9 @@ export function Modal({ open, onClose, children, labelledBy, label, className }:
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
         className={cn(
-          "relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-surface shadow-2xl outline-none animate-fade-up sm:max-h-[88vh] sm:rounded-2xl",
+          side === "right"
+            ? "relative z-10 h-full w-full max-w-md overflow-y-auto bg-surface shadow-2xl outline-none animate-slide-in-right"
+            : "relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-surface shadow-2xl outline-none animate-fade-up sm:max-h-[88vh] sm:rounded-2xl",
           className,
         )}
       >
