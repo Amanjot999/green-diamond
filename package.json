@@ -7,7 +7,9 @@
     "build": "pnpm --filter @green-diamond/frontend build",
     "start": "pnpm --filter @green-diamond/frontend start",
     "lint": "eslint .",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "prepare": "node scripts/setup-hooks.mjs",
+    "features:backfill": "node scripts/update-features.mjs --backfill"
   },
   "devDependencies": {
     "eslint": "^9",

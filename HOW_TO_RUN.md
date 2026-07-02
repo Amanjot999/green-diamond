@@ -38,6 +38,21 @@ Good to know:
 - Next.js allows only **one dev server per project** — a second `pnpm dev` will just exit.
 - **No `.env` file is required.** Every provider (payments, shipping, data) defaults to `mock`.
 
+## Day-to-day development
+
+`pnpm dev` is the only command you need day to day — it runs the whole stack (frontend +
+backend) with hot reload. Everything else is situational:
+
+| Situation                              | What to run                                           |
+| -------------------------------------- | ----------------------------------------------------- |
+| Normal coding session                  | `pnpm dev` — edit anything, both packages hot-reload  |
+| Pulled new code / package.json changed | `pnpm install` once, then `pnpm dev`                  |
+| Test a production build                | `pnpm build`, then `pnpm start` (no hot reload)       |
+| Phase 3+ (once Prisma/Postgres lands)  | database + `pnpm dev` — this guide will be updated    |
+
+Keep **one** `pnpm dev` at a time — if it exits instantly, another instance already holds the
+dev-server lock.
+
 ## Environment variables (optional)
 
 Copy `frontend/.env.example` to `frontend/.env` and edit as needed. Next.js loads env files from
@@ -85,6 +100,27 @@ pnpm lint && pnpm typecheck && pnpm build
 - **Stale build weirdness** — delete `frontend/.next` and rerun `pnpm dev`.
 - **Module resolution errors after pulling** — reinstall:
   `rm -rf node_modules frontend/node_modules backend/node_modules && pnpm install`.
+
+## Feature log (FEATURES.md)
+
+[`FEATURES.md`](./FEATURES.md) is a running record of every feature, maintained **automatically
+on every commit** by a git hook (`scripts/git-hooks/post-commit` → `scripts/update-features.mjs`):
+
+- A commit whose subject starts with `feat:` / `feat(scope):` **adds an entry** — title from the
+  commit subject, description from the commit body. Write a good commit message and the log
+  writes itself.
+- Any later commit that touches a feature's files **bumps its "Last updated"** (file renames are
+  tracked too).
+- Deleting **all** of a feature's files marks its entry **removed** (struck through). Entries for
+  other features are never touched.
+- The hook folds the log update **into the same commit** (one automatic amend), so the log always
+  matches history — commit normally and forget it's there.
+- The description text under each `<!-- description -->` marker is yours: hand-edits are
+  preserved across updates.
+
+Setup is automatic — `pnpm install` activates the hook (via the root `prepare` script). Manual
+controls: `node scripts/setup-hooks.mjs` re-activates it; `pnpm features:backfill` rebuilds the
+whole file from git history (this overwrites manual description edits).
 
 ## More docs
 

@@ -66,3 +66,7 @@ inside the backend, imports are relative. Root `pnpm` scripts proxy to the front
 
 - Conventional commits, one phase/batch per commit (`feat(ui): product detail page`, `chore: ...`).
 - After changing code, make sure `pnpm lint` and `pnpm build` pass before committing.
+- `FEATURES.md` is generated: a `post-commit` hook (`scripts/update-features.mjs`) logs `feat:`
+  commits and keeps entries in sync (last-updated bumps, renames, removals) by amending the
+  commit once. Don't edit its bullet lines by hand — write informative `feat:` subjects/bodies
+  instead. Only the text under each `<!-- description -->` marker is safe to hand-edit.

@@ -1,0 +1,24 @@
+#!/bin/sh
+# Keep FEATURES.md in sync with the commit that just landed, then fold the
+# update into that same commit (single amend). Guarded against recursion and
+# against firing mid-rebase/merge/cherry-pick.
+
+if [ -n "$FEATURES_UPDATING" ]; then exit 0; fi
+
+GIT_DIR_PATH=$(git rev-parse --git-dir) || exit 0
+for marker in rebase-merge rebase-apply MERGE_HEAD CHERRY_PICK_HEAD REVERT_HEAD; do
+  if [ -e "$GIT_DIR_PATH/$marker" ]; then exit 0; fi
+done
+
+ROOT=$(git rev-parse --show-toplevel) || exit 0
+export FEATURES_UPDATING=1
+
+node "$ROOT/scripts/update-features.mjs" || exit 0
+
+if [ -n "$(git -C "$ROOT" status --porcelain -- FEATURES.md)" ]; then
+  git -C "$ROOT" add FEATURES.md
+  git -C "$ROOT" commit --amend --no-edit --no-verify --quiet
+  echo "post-commit: FEATURES.md updated and folded into this commit."
+fi
+
+exit 0
